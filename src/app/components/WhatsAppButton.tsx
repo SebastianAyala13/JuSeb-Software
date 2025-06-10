@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion';
 
 export default function WhatsAppButton() {
-  const phoneNumber = '+573107736703';
+  // El formato de "wa.me" solo admite números, sin el signo "+"
+  const phoneNumber = '573107736703';
   const message = 'Hola, me gustaría obtener más información sobre sus servicios.';
 
   const handleClick = () => {
