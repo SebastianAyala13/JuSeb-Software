@@ -11,8 +11,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "JuSeb SOFTWARE",
-  description: "Desarrollo de software a medida, aplicaciones web, móviles y soluciones tecnológicas innovadoras",
+  title: 'JuSeb SOFTWARE - Soluciones Tecnológicas Innovadoras',
+  description: 'Desarrollo de software a medida, aplicaciones web, móviles y sistemas empresariales. Expertos en tecnologías modernas y soluciones innovadoras.',
   keywords: "desarrollo web, software, aplicaciones móviles, tecnología, Pereira, Colombia",
   authors: [{ name: 'Juan Sebastian Ayala Martin' }],
   openGraph: {
