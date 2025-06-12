@@ -237,7 +237,7 @@ export default function LandingDesarrolloWeb() {
                       <p className="text-gray-400 text-sm">{testimonio.empresa}</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 mb-4 italic">"{testimonio.testimonio}"</p>
+                  <p className="text-gray-300 mb-4 italic">&ldquo;{testimonio.testimonio}&rdquo;</p>
                   <div className="bg-green-500/20 text-green-400 px-4 py-2 rounded-lg inline-block font-bold">
                     📈 {testimonio.resultado}
                   </div>

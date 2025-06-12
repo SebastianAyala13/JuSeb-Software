@@ -143,7 +143,7 @@ export default function TestimoniosVideo() {
                 </div>
 
                 <p className="text-gray-300 mb-4 italic leading-relaxed">
-                  "{testimonio.testimonio}"
+                  &ldquo;{testimonio.testimonio}&rdquo;
                 </p>
 
                 <div className="flex items-center justify-between">
