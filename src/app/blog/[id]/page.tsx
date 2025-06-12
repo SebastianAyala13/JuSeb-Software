@@ -279,7 +279,7 @@ export default function BlogPost() {
               {post.content.split('\n').map((paragraph, index) => {
                 if (paragraph.startsWith('## ')) {
                   return (
-                    <h2 key={index} className="text-2xl font-bold text-white mt-8 mb-4">
+                    <h2 key={index} className="text-xl md:text-2xl font-bold text-white mt-8 mb-4 break-words whitespace-normal leading-tight max-w-xl mx-auto">
                       {paragraph.replace('## ', '')}
                     </h2>
                   );

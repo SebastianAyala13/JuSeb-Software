@@ -46,7 +46,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 break-words whitespace-normal leading-tight max-w-4xl mx-auto">
               Transformamos Ideas en Realidad Digital
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto">
@@ -82,7 +82,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 break-words whitespace-normal leading-tight max-w-2xl mx-auto">
               ¿Por qué elegirnos?
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
