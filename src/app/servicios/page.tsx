@@ -120,100 +120,80 @@ export default function Servicios() {
         canonical="https://juseb-software.com/servicios"
         schema={schemaOrgServicios}
       />
-      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-20">
-        {/* Header */}
-      <div className="max-w-7xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 break-words whitespace-normal leading-tight max-w-3xl mx-auto">
-            Nuestros Servicios
-          </h1>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Soluciones tecnológicas integrales para impulsar tu negocio al siguiente nivel
-          </p>
-        </motion.div>
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h1 className="text-4xl md:text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 leading-normal md:leading-normal">
+              Nuestros Servicios
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Soluciones tecnológicas integrales para impulsar tu negocio al siguiente nivel
+            </p>
+          </motion.div>
 
-        {/* Debug: Mostrar cantidad de servicios */}
-        <p className="text-gray-400 text-center mb-8">
-          {servicios.length} servicios disponibles
-        </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicios.map((servicio, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-gray-800/50 rounded-xl p-8 hover:transform hover:scale-105 transition-all duration-300 border border-gray-700 hover:border-blue-500"
+              >
+                <div className="text-4xl mb-6">
+                  <span aria-label={servicio.titulo} role="img" className="transform transition-transform hover:scale-110 inline-block">
+                    {servicio.icono}
+                  </span>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  {servicio.titulo}
+                </h3>
+                <p className="text-gray-400 mb-6">
+                  {servicio.descripcion}
+                </p>
+                <ul className="space-y-3">
+                  {servicio.caracteristicas.map((caracteristica, idx) => (
+                    <li key={idx} className="flex items-start space-x-3">
+                      <svg className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-300">{caracteristica}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
 
-        {/* Servicios Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicios && servicios.map((servicio, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="bg-gray-800/50 backdrop-blur-lg p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all group"
-            >
-              <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform">
-                {/* Si tuvieras una imagen real de servicio, usa next/image así:
-  <Image
-    src={`/servicios/${servicio.titulo.toLowerCase().replace(/ /g, '-')}.webp`}
-    alt={servicio.titulo}
-    width={64}
-    height={64}
-    loading="lazy"
-    className="mb-4 rounded-lg object-contain"
-    style={{ background: '#222' }}
-    // Si la imagen no existe, puedes dejar el icono por defecto
-    onError={e => (e.currentTarget.style.display = 'none')}
-  />
-*/}
-<span aria-label={servicio.titulo} role="img">{servicio.icono}</span>
-              </div>
-              <h3 className="text-2xl font-bold mb-3 text-white">
-                {servicio.titulo}
-              </h3>
-              <p className="text-gray-400 mb-6">
-                {servicio.descripcion}
-              </p>
-              <ul className="space-y-2">
-                {servicio.caracteristicas.map((caracteristica, idx) => (
-                  <li key={idx} className="flex items-center text-gray-300">
-                    <svg className="w-4 h-4 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                    {caracteristica}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          ))}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="mt-20 text-center"
+          >
+            <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+              ¿Listo para empezar tu proyecto?
+            </h2>
+            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
+              Contáctanos hoy mismo para discutir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos
+            </p>
+            <Link href="/contacto">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
+              >
+                Contactar ahora
+              </motion.button>
+            </Link>
+          </motion.div>
         </div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-20 text-center"
-        >
-          <h2 className="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-            ¿Listo para empezar tu proyecto?
-          </h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-            Contáctanos hoy mismo para discutir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos
-          </p>
-          <Link href="/contacto">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
-            >
-              Contactar ahora
-            </motion.button>
-          </Link>
-        </motion.div>
       </div>
-    </div>
     </>
   );
 }

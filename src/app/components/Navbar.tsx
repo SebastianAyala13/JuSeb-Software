@@ -65,7 +65,7 @@ export default function Navbar() {
 
           {/* Menú de escritorio */}
           <div className="hidden md:flex md:items-center md:space-x-8">
-            <NavLinks pathname={pathname} mobile={false} onClick={() => {}} />
+            <NavLinks pathname={pathname || ''} mobile={false} onClick={() => {}} />
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
             className="md:hidden bg-gray-900/95 backdrop-blur-sm"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <NavLinks pathname={pathname} mobile={true} onClick={closeMenu} />
+              <NavLinks pathname={pathname || ''} mobile={true} onClick={closeMenu} />
             </div>
           </motion.div>
         )}
