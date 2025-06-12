@@ -301,25 +301,6 @@ export default function BlogPost() {
                 return null;
               })}
             </div>
-                  </h2>
-                );
-              }
-              if (paragraph.startsWith('- ')) {
-                return (
-                  <li key={index} className="text-gray-300 ml-4">
-                    {paragraph.replace('- ', '')}
-                  </li>
-                );
-              }
-              if (paragraph.trim()) {
-                return (
-                  <p key={index} className="text-gray-300 mb-4">
-                    {paragraph}
-                  </p>
-                );
-              }
-              return null;
-            })}
           </div>
 
           {/* Navegación */}

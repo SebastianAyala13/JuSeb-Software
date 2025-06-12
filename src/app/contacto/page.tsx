@@ -62,12 +62,6 @@ export default function Contacto() {
     setStatus({ ...status, submitting: true, error: false, message: '' });
 
     try {
-      // console.log eliminado
-        serviceId: emailjsConfig.serviceId,
-        templateId: emailjsConfig.templateId,
-        publicKey: emailjsConfig.publicKey
-      });
-
       const result = await emailjs.send(
         emailjsConfig.serviceId,
         emailjsConfig.templateId,
