@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const projects = [
-  {
+    {
     id: 'gestion-escolar',
     title: 'Sistema de Gestión Escolar',
     description: 'Sistema integral para la gestión académica y administrativa de instituciones educativas. Incluye módulos de asistencia, calificaciones, comunicación y más.',
@@ -25,8 +25,8 @@ const projects = [
     description: 'Aplicación móvil para servicio de entrega a domicilio con seguimiento en tiempo real, pagos integrados y sistema de calificaciones.',
     image: '/drop.png',
     technologies: ['React Native', 'Redux', 'Node.js', 'PostgreSQL']
-  },
-  {
+    },
+    {
     id: 'telemedicina',
     title: 'Sistema de Telemedicina',
     description: 'Plataforma para consultas médicas virtuales con agendamiento, videollamadas, historial clínico y recetas electrónicas.',
@@ -64,11 +64,14 @@ export default function Projects() {
             >
               <Link href={`/proyectos/${project.id}`}>
                 <div className="relative h-64">
-                  <Image
-                    src={project.image}
+                  {/* Optimización: thumbnail WebP y lazy loading, fallback si no existe */}
+<Image
+                    src={project.image.replace('.png', '.webp')}
                     alt={project.title}
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    onError={e => (e.currentTarget.style.display = 'none')}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
                 </div>

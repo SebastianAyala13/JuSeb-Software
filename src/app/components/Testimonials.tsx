@@ -58,14 +58,16 @@ export default function Testimonials() {
               className="bg-gray-800/50 rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300"
             >
               <div className="flex items-center mb-6">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+                {/* Optimización: avatar WebP y lazy loading, fallback accesible si no existe */}
+                <Image
+                  src={testimonial.image.replace('.png', '.webp')}
+                  alt={testimonial.name}
+                  className="w-16 h-16 rounded-full object-cover mr-4 border-2 border-blue-500"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                  onError={e => (e.currentTarget.style.display = 'none')}
+                />
                 <div>
                   <h3 className="text-lg font-semibold text-white">
                     {testimonial.name}

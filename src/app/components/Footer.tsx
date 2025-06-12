@@ -43,12 +43,15 @@ export default function Footer() {
           {/* Logo y descripción */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center space-x-3 mb-4">
-              <motion.img
-                src="/logo.png"
+              {/* Optimización: logo WebP y lazy loading, fallback si no existe */}
+<motion.img
+                src="/logo.webp"
                 alt="JuSeb SOFTWARE"
                 className="h-8 w-8 rounded"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                loading="lazy"
+                onError={e => (e.currentTarget.style.display = 'none')}
               />
               <span className="text-white font-bold text-xl">JuSeb SOFTWARE</span>
             </Link>

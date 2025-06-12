@@ -5,8 +5,39 @@ import { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { emailjsConfig } from '@/config/emailjs';
 import { initEmailJS } from '@/utils/emailjs-init';
+import SeoHead from '../components/SeoHead';
+
+const schemaOrgContacto = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contacto | JuSeb SOFTWARE',
+  description: 'Página de contacto para clientes y empresas interesadas en soluciones de software, desarrollo web, apps y consultoría IT en Pereira, Colombia.',
+  url: 'https://juseb-software.com/contacto',
+  publisher: {
+    '@type': 'Organization',
+    name: 'JuSeb SOFTWARE',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://juseb-software.com/logo.png',
+    },
+  },
+  contactOption: [
+    {
+      '@type': 'ContactPoint',
+      telephone: '+57-321-123-4567',
+      contactType: 'customer support',
+      email: 'contacto@juseb-software.com',
+    }
+  ]
+};
+type StatusType = { submitting: boolean; submitted: boolean; error: boolean; message: string };
 
 export default function Contacto() {
+  // SeoHead para SEO técnico y schema.org
+  // Puedes personalizar los textos y datos cuando lo desees
+  //
+  // SeoHead debe ir al principio del return
+
   useEffect(() => {
     initEmailJS();
   }, []);
@@ -31,7 +62,7 @@ export default function Contacto() {
     setStatus({ ...status, submitting: true, error: false, message: '' });
 
     try {
-      console.log('Enviando email con configuración:', {
+      // console.log eliminado
         serviceId: emailjsConfig.serviceId,
         templateId: emailjsConfig.templateId,
         publicKey: emailjsConfig.publicKey
@@ -52,7 +83,7 @@ export default function Contacto() {
         emailjsConfig.publicKey
       );
 
-      console.log('Resultado del envío:', result);
+      // console.log eliminado
 
       if (result.status === 200) {
         setStatus({
@@ -88,12 +119,16 @@ export default function Contacto() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-20">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+    <>
+      <SeoHead
+        title="Contacto | JuSeb SOFTWARE"
+        description="Contáctanos para soluciones de software, desarrollo web, apps y consultoría IT en Pereira, Colombia. ¡Te responderemos pronto!"
+        canonical="https://juseb-software.com/contacto"
+        schema={schemaOrgContacto}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* Header */}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >

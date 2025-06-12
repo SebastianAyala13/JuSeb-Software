@@ -35,7 +35,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navbar />
         <main className="min-h-screen pt-16">
-          {children}
+        {children}
         </main>
         <Footer />
         <WhatsAppButton />

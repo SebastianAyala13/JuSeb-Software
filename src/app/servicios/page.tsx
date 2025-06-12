@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useEffect } from 'react'
+import SeoHead from '../components/SeoHead'
+// Validación de formularios recomendada aquí
 
 const servicios = [
   {
@@ -79,14 +81,47 @@ const servicios = [
   }
 ];
 
+const schemaOrgServicios = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'Desarrollo Web, Aplicaciones Móviles, Consultoría IT, E-commerce, Marketing Digital',
+  provider: {
+    '@type': 'Organization',
+    name: 'JuSeb SOFTWARE',
+    url: 'https://juseb-software.com',
+    logo: 'https://juseb-software.com/logo.png',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Pereira',
+      addressRegion: 'Risaralda',
+      addressCountry: 'CO',
+    },
+    contactPoint: [{
+      '@type': 'ContactPoint',
+      telephone: '+57-321-123-4567',
+      contactType: 'customer support',
+      email: 'contacto@juseb-software.com',
+    }]
+  },
+  areaServed: 'Colombia',
+  description: 'Servicios de desarrollo web, aplicaciones móviles, consultoría IT, e-commerce y marketing digital en Pereira, Colombia.'
+};
+
 export default function Servicios() {
   useEffect(() => {
-    console.log('Servicios disponibles:', servicios);
+    // console.log eliminado
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-20">
-      {/* Header */}
+    <>
+      <SeoHead
+        title="Servicios de Desarrollo Web, Apps y Consultoría IT | JuSeb SOFTWARE"
+        description="Creamos soluciones digitales: desarrollo web, apps móviles, consultoría IT, e-commerce y marketing digital. Servicios profesionales en Pereira, Colombia."
+        canonical="https://juseb-software.com/servicios"
+        schema={schemaOrgServicios}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-20">
+        {/* Header */}
       <div className="max-w-7xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -119,7 +154,20 @@ export default function Servicios() {
               className="bg-gray-800/50 backdrop-blur-lg p-6 rounded-xl border border-gray-700 hover:border-blue-500 transition-all group"
             >
               <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform">
-                {servicio.icono}
+                {/* Si tuvieras una imagen real de servicio, usa next/image así:
+  <Image
+    src={`/servicios/${servicio.titulo.toLowerCase().replace(/ /g, '-')}.webp`}
+    alt={servicio.titulo}
+    width={64}
+    height={64}
+    loading="lazy"
+    className="mb-4 rounded-lg object-contain"
+    style={{ background: '#222' }}
+    // Si la imagen no existe, puedes dejar el icono por defecto
+    onError={e => (e.currentTarget.style.display = 'none')}
+  />
+*/}
+<span aria-label={servicio.titulo} role="img">{servicio.icono}</span>
               </div>
               <h3 className="text-2xl font-bold mb-3 text-white">
                 {servicio.titulo}
@@ -166,5 +214,6 @@ export default function Servicios() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }

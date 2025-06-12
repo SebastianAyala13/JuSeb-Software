@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
+import SeoHead from '../../components/SeoHead';
 
 const blogPosts = {
   '1': {
@@ -195,14 +196,58 @@ export default function BlogPost() {
     );
   }
 
+  const schemaOrgBlog = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.content.substring(0, 150),
+    image: `https://juseb-software.com${post.image}`,
+    author: {
+      '@type': 'Person',
+      name: 'Juan Sebastian Ayala Martin',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'JuSeb SOFTWARE',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://juseb-software.com/logo.png',
+      },
+    },
+    datePublished: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://juseb-software.com/blog/${id}`,
+    },
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.article
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
+    <>
+      <SeoHead
+        title={`${post.title} | Blog | JuSeb SOFTWARE`}
+        description={post.content.substring(0, 150)}
+        canonical={`https://juseb-software.com/blog/${id}`}
+        schema={schemaOrgBlog}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black pt-32">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Encabezado */}
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center space-x-4 mb-6">
+                <span className="text-blue-400">{post.category}</span>
+                <span className="text-gray-400">•</span>
+                <span className="text-gray-400">{post.readTime}</span>
+                <span className="text-gray-400">•</span>
+                <time className="text-gray-400">{post.date}</time>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                {post.title}
+              </h1>
           {/* Encabezado */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center space-x-4 mb-6">
@@ -214,26 +259,48 @@ export default function BlogPost() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
               {post.title}
-            </h1>
-          </div>
 
-          {/* Imagen destacada */}
-          <div className="relative h-[400px] mb-12 rounded-xl overflow-hidden">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="object-cover"
-            />
-          </div>
+            {/* Imagen destacada */}
+            <div className="relative h-[400px] mb-12 rounded-xl overflow-hidden">
+              {/* Optimización: portada WebP y lazy loading, fallback si no existe */}
+              <Image
+                src={post.image.replace('.png', '.webp')}
+                alt={post.title}
+                className="w-full h-64 object-cover rounded-xl mb-8"
+                width={800}
+                height={320}
+                loading="lazy"
+                onError={e => (e.currentTarget.style.display = 'none')}
+              />
+            </div>
 
-          {/* Contenido */}
-          <div className="prose prose-invert prose-lg max-w-none">
-            {post.content.split('\n').map((paragraph, index) => {
-              if (paragraph.startsWith('## ')) {
-                return (
-                  <h2 key={index} className="text-2xl font-bold text-white mt-8 mb-4">
-                    {paragraph.replace('## ', '')}
+            {/* Contenido */}
+            <div className="prose prose-invert prose-lg max-w-none">
+              {post.content.split('\n').map((paragraph, index) => {
+                if (paragraph.startsWith('## ')) {
+                  return (
+                    <h2 key={index} className="text-2xl font-bold text-white mt-8 mb-4">
+                      {paragraph.replace('## ', '')}
+                    </h2>
+                  );
+                }
+                if (paragraph.startsWith('- ')) {
+                  return (
+                    <li key={index} className="text-gray-300 ml-4">
+                      {paragraph.replace('- ', '')}
+                    </li>
+                  );
+                }
+                if (paragraph.trim()) {
+                  return (
+                    <p key={index} className="text-gray-300 mb-4">
+                      {paragraph}
+                    </p>
+                  );
+                }
+                return null;
+              })}
+            </div>
                   </h2>
                 );
               }

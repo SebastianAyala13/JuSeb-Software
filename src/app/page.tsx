@@ -4,10 +4,39 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
+import SeoHead from './components/SeoHead';
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'JuSeb SOFTWARE',
+  url: 'https://juseb-software.com',
+  logo: 'https://juseb-software.com/logo.png',
+  description: 'Desarrollo de software a medida, aplicaciones web, móviles y sistemas empresariales. Expertos en tecnologías modernas y soluciones innovadoras.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Pereira',
+    addressRegion: 'Risaralda',
+    addressCountry: 'CO',
+  },
+  contactPoint: [{
+    '@type': 'ContactPoint',
+    telephone: '+57-321-123-4567',
+    contactType: 'customer support',
+    email: 'contacto@juseb-software.com',
+  }]
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+    <>
+      <SeoHead
+        title="JuSeb SOFTWARE - Soluciones Tecnológicas Innovadoras"
+        description="Desarrollo de software a medida, aplicaciones web, móviles y sistemas empresariales. Expertos en tecnologías modernas y soluciones innovadoras."
+        canonical="https://juseb-software.com/"
+        schema={schemaOrg}
+      />
+      <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
       {/* Hero Section */}
       <section className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,6 +57,9 @@ export default function Home() {
                 href="/contacto"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
               >
+                {/* Si tienes un logo o imagen de CTA:
+                <Image src="/cta-logo.webp" alt="Comienza tu Proyecto" width={32} height={32} loading="lazy" className="inline-block mr-2" />
+                */}
                 Comienza tu Proyecto
               </Link>
               <Link
@@ -96,7 +128,19 @@ export default function Home() {
                 className="bg-gray-800/50 rounded-xl p-6 hover:transform hover:scale-105 transition-all duration-300"
               >
                 <div className="bg-gray-700/50 rounded-lg p-3 inline-block mb-4">
-                  {feature.icon}
+                  {/* Si tienes imagen para el feature:
+  <Image
+    src={`/features/${feature.title.toLowerCase().replace(/ /g, '-')}.webp`}
+    alt={feature.title}
+    width={48}
+    height={48}
+    loading="lazy"
+    className="mb-3 object-contain"
+    style={{ background: '#222' }}
+    onError={e => (e.currentTarget.style.display = 'none')}
+  />
+*/}
+<span aria-label={feature.title} role="img">{feature.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3">
                   {feature.title}
@@ -116,5 +160,6 @@ export default function Home() {
       {/* FAQ Section */}
       <FAQ />
     </div>
+    </>
   );
 } 

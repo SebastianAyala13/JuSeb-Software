@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://juseb-software.com/sitemap.xml
