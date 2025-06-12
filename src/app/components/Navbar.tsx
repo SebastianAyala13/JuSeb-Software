@@ -93,8 +93,11 @@ function NavLinks({ pathname, mobile, onClick }: { pathname: string; mobile: boo
   const links = [
     { href: '/', label: 'Inicio' },
     { href: '/servicios', label: 'Servicios' },
+    { href: '/precios', label: 'Precios' },
     { href: '/proyectos', label: 'Proyectos' },
     { href: '/blog', label: 'Blog' },
+    { href: '/recursos', label: 'Recursos' },
+    { href: '/sobre-nosotros', label: 'Nosotros' },
     { href: '/contacto', label: 'Contacto' },
   ];
 

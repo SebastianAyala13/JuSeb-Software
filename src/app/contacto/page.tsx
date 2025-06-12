@@ -41,7 +41,8 @@ export default function Contacto() {
     email: '',
     empresa: '',
     mensaje: '',
-    tipo: 'general'
+    tipo: 'general',
+    presupuesto: ''
   });
 
   const [status, setStatus] = useState({
@@ -83,7 +84,8 @@ export default function Contacto() {
           email: '',
           empresa: '',
           mensaje: '',
-          tipo: 'general'
+          tipo: 'general',
+          presupuesto: ''
         });
       }
     } catch (error) {
