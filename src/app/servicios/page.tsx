@@ -433,7 +433,7 @@ export default function Servicios() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border-2 border-green-500 text-green-400 rounded-xl font-medium text-lg hover:bg-green-500 hover:text-white transition-colors"
               >
-                📞 Llamar: +57 321 123 4567
+                📞 Llamar: +57 310 773 6703
               </motion.button>
             </div>
             <p className="text-sm text-gray-500 mt-4">
