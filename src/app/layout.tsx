@@ -11,6 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ju-seb-software.vercel.app"),
   title: 'JuSeb SOFTWARE - Soluciones Tecnológicas Innovadoras',
   description: 'Desarrollo de software a medida, aplicaciones web, móviles y sistemas empresariales. Expertos en tecnologías modernas y soluciones innovadoras.',
   keywords: "desarrollo web, software, aplicaciones móviles, tecnología, Pereira, Colombia",
@@ -18,8 +19,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JuSeb SOFTWARE",
     description: "Desarrollo de software a medida, aplicaciones web, móviles y soluciones tecnológicas innovadoras",
-    url: "https://juseb-software.com",
+    url: "https://ju-seb-software.vercel.app",
     siteName: "JuSeb SOFTWARE",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "JuSeb SOFTWARE",
+      },
+    ],
     locale: "es_CO",
     type: "website",
   },
@@ -35,7 +44,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navbar />
         <main className="min-h-screen pt-16">
-        {children}
+          {children}
         </main>
         <Footer />
         <WhatsAppButton />

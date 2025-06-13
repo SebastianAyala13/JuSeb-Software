@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
-Sitemap: https://juseb-software.com/sitemap.xml
+
+# Host
+Host: https://ju-seb-software.vercel.app
+
+# Sitemaps
+Sitemap: https://ju-seb-software.vercel.app/sitemap.xml
