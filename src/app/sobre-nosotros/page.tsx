@@ -17,7 +17,7 @@ const equipo = [
       "Speaker en conferencias tech",
       "Mentor de desarrolladores junior"
     ],
-    imagen: "/images/team/sebas.png",
+    imagen: "/team/sebas.png",
     linkedin: "https://www.linkedin.com/in/sebastian-aayala13/",
     github: "https://github.com/SebastianAyala13"
   },
@@ -225,7 +225,7 @@ export default function SobreNosotros() {
             <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
               Conoce Nuestro Equipo
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-auto max-w-6xl">
               {equipo.map((miembro, index) => (
                 <motion.div
                   key={index}
