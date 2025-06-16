@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import SeoHead from '../components/SeoHead'
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+import SeoHead from '../components/SeoHead';
 
 const equipo = [
   {
     nombre: "Juan Sebastián",
     cargo: "CEO & Full Stack Developer",
-    experiencia: "8+ años",
+    experiencia: "Más de 5 años",
     especialidades: ["React", "Node.js", "AWS", "Arquitectura de Software"],
     descripcion: "Apasionado por crear soluciones tecnológicas que transforman negocios. Especialista en desarrollo full-stack y arquitectura de sistemas escalables.",
     logros: [
@@ -17,43 +17,29 @@ const equipo = [
       "Speaker en conferencias tech",
       "Mentor de desarrolladores junior"
     ],
-    imagen: "/images/team/juan-sebastian.jpg",
-    linkedin: "https://linkedin.com/in/juansebastian",
-    github: "https://github.com/juansebastian"
+    imagen: "/images/team/sebas.png",
+    linkedin: "https://www.linkedin.com/in/sebastian-aayala13/",
+    github: "https://github.com/SebastianAyala13"
   },
   {
-    nombre: "María González",
-    cargo: "UX/UI Designer & Frontend Developer",
-    experiencia: "6+ años",
-    especialidades: ["Figma", "React", "Design Systems", "User Research"],
-    descripcion: "Diseñadora con enfoque en experiencia de usuario y desarrollo frontend. Crea interfaces intuitivas que conectan con los usuarios.",
+    nombre: "Juan José Cardona",
+    cargo: "Full Stack Developer",
+    experiencia: "Más de 5 años",
+    especialidades: ["Next.js", "Firebase", "Tailwind", "API REST"],
+    descripcion: "Desarrollador full-stack con pasión por construir plataformas modernas y escalables. Siempre enfocado en la mejora continua y las buenas prácticas de código.",
     logros: [
-      "50+ diseños premiados",
-      "Especialista en Design Systems",
-      "Certificada en UX Research",
-      "Mentora en bootcamps de diseño"
+      "Desarrollo de múltiples plataformas SaaS",
+      "Especialista en arquitectura moderna web",
+      "Automatización de procesos internos",
+      "Líder en implementación CI/CD"
     ],
-    imagen: "/images/team/maria-gonzalez.jpg",
-    linkedin: "https://linkedin.com/in/mariagonzalez",
-    dribbble: "https://dribbble.com/mariagonzalez"
-  },
-  {
-    nombre: "Carlos Rodríguez",
-    cargo: "DevOps Engineer & Cloud Architect",
-    experiencia: "7+ años",
-    especialidades: ["Docker", "Kubernetes", "CI/CD", "Monitoring"],
-    descripcion: "Experto en infraestructura cloud y automatización. Garantiza que nuestras soluciones sean escalables, seguras y eficientes.",
-    logros: [
-      "Infraestructuras para 1M+ usuarios",
-      "Certificado Kubernetes Administrator",
-      "Especialista en seguridad cloud",
-      "Contribuidor open source"
-    ],
-    imagen: "/images/team/carlos-rodriguez.jpg",
-    linkedin: "https://linkedin.com/in/carlosrodriguez",
-    github: "https://github.com/carlosrodriguez"
+    imagen: "/images/team/juan-jose.jpg",
+    linkedin: "https://www.linkedin.com/in/juan-jose-cardona-gil-9b627321a/",
+    github: "https://github.com/juanjose0312"
   }
 ];
+
+
 
 const valores = [
   {
@@ -302,14 +288,6 @@ export default function SobreNosotros() {
                          className="text-gray-400 hover:text-gray-300 transition-colors">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                      </a>
-                    )}
-                    {miembro.dribbble && (
-                      <a href={miembro.dribbble} target="_blank" rel="noopener noreferrer" 
-                         className="text-pink-400 hover:text-pink-300 transition-colors">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.816zm-11.62-2.58c.232-.4 3.045-5.055 8.332-6.765.135-.045.27-.084.405-.12-.26-.585-.54-1.167-.832-1.74C7.17 11.775 2.206 11.71 1.756 11.7l-.004.312c0 2.633.998 5.037 2.634 6.855zm-2.42-8.955c.46.008 4.683.026 9.477-1.248-1.698-3.018-3.53-5.558-3.8-5.928-2.868 1.35-5.01 3.99-5.676 7.17zM9.6 2.052c.282.38 2.145 2.914 3.822 6 3.645-1.365 5.19-3.44 5.373-3.702-1.81-1.61-4.19-2.586-6.795-2.586-.825 0-1.63.1-2.4.285zm10.335 3.483c-.218.29-1.935 2.493-5.724 4.04.24.49.47.985.68 1.486.08.18.15.36.22.53 3.41-.43 6.8.26 7.14.33-.02-2.42-.88-4.64-2.31-6.38z"/>
                         </svg>
                       </a>
                     )}
