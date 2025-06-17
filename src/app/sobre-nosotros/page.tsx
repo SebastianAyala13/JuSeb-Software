@@ -39,8 +39,6 @@ const equipo = [
   }
 ];
 
-
-
 const valores = [
   {
     titulo: "Excelencia Técnica",
@@ -83,7 +81,6 @@ const estadisticas = [
   { numero: "24/7", label: "Soporte Técnico", icono: "🛠️" },
   { numero: "200%", label: "ROI Promedio", icono: "📈" }
 ];
-
 
 export default function SobreNosotros() {
   return (
@@ -130,18 +127,6 @@ export default function SobreNosotros() {
               </motion.a>
             </div>
           </motion.div>
-
-              {/* Contacto */}
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/contacto"
-                className="px-8 py-4 border-2 border-blue-500 text-blue-400 rounded-xl font-medium text-lg hover:bg-blue-500 hover:text-white transition-colors"
-              >
-                📅 Agenda tu Reunión
-              </motion.a>
-            </div>
-
 
           {/* Estadísticas */}
           <motion.div
@@ -205,7 +190,6 @@ export default function SobreNosotros() {
             </div>
           </motion.div>
 
-
           {/* Valores */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -233,8 +217,8 @@ export default function SobreNosotros() {
             </div>
           </motion.div>
 
-                    {/* Equipo */}
-                    <motion.div
+          {/* Equipo */}
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
@@ -362,17 +346,20 @@ export default function SobreNosotros() {
               Conversemos sobre tu proyecto y cómo podemos hacerlo realidad.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
-              >
-                🚀 Empezar Proyecto
-              </motion.button>
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                 href="https://wa.me/573107736703?text=Hola%2C%20estoy%20interesado%20en%20un%20proyecto%20web"
+                href="https://wa.me/573107736703?text=Hola%2C%20quiero%20trabajar%20con%20JuSeb%20SOFTWARE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
+              >
+                🚀 Empezar Proyecto
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://wa.me/573107736703?text=Hola%2C%20estoy%20interesado%20en%20un%20proyecto%20web"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-green-500 text-green-400 rounded-xl font-medium text-lg hover:bg-green-500 hover:text-white transition-colors"
@@ -385,7 +372,7 @@ export default function SobreNosotros() {
             </p>  
           </motion.div>
         </div>
-  
+      </div>
     </>
   );
 } 
