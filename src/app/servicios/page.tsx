@@ -75,7 +75,6 @@ const schemaOrgServicios = {
   description: 'Servicios de desarrollo web, apps móviles, consultoría IT y automatización con herramientas como n8n, Zapier y más, en Pereira y Colombia.'
 };
 
-
 export default function Servicios() {
   const [selectedService, setSelectedService] = useState(null);
 
@@ -87,7 +86,7 @@ export default function Servicios() {
     <>
       <SeoHead
         title="Servicios Profesionales de Tecnología | JuSeb SOFTWARE"
-        description="Creamos soluciones digitales modernas: desarrollo web, apps móviles, consultoría IT. Cotiza, agenda o solicita una demo gratis."
+        description="Creamos soluciones digitales modernas: desarrollo web, apps móviles, consultoría IT. Cotiza tu proyecto fácilmente con nosotros."
         canonical="https://juseb-software.com/servicios"
         schema={schemaOrgServicios}
       />
@@ -102,32 +101,11 @@ export default function Servicios() {
             className="text-center mb-20"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Servicios que Transforman
+              Servicios que<br /> Transforman
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-6">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-6">
               Desarrollo web, apps móviles y consultoría IT con enfoque en resultados. Más de 100 empresas nos recomiendan.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="https://wa.me/573107736703?text=Hola%2C%20quiero%20una%20demo%20gratuita%20de%20sus%20servicios"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg"
-              >
-                🎯 Solicitar Demo Gratuita
-              </motion.a>
-              <Link href="/precios">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 border-2 border-blue-500 text-blue-400 rounded-xl font-medium text-lg hover:bg-blue-500 hover:text-white"
-                >
-                  💰 Ver Precios
-                </motion.button>
-              </Link>
-            </div>
           </motion.div>
 
           {/* Servicios */}
@@ -156,24 +134,14 @@ export default function Servicios() {
                     {servicio.beneficios.map((b, i) => <li key={i}>{b}</li>)}
                   </ul>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-3 mt-6">
-                  <motion.a
-                    href={`https://wa.me/573107736703?text=Hola%2C%20quiero%20una%20demo%20de%20${encodeURIComponent(servicio.titulo)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm"
-                  >
-                    🎯 Demo Gratis
-                  </motion.a>
+                <div className="mt-6">
                   <motion.a
                     href={`https://wa.me/573107736703?text=Hola%2C%20quiero%20cotizar%20${encodeURIComponent(servicio.titulo)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="flex-1 border border-blue-500 text-blue-400 hover:bg-blue-500 hover:text-white py-2 px-4 rounded-lg font-medium text-sm"
+                    className="w-full block bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm text-center"
                   >
                     💬 Cotizar Proyecto
                   </motion.a>
