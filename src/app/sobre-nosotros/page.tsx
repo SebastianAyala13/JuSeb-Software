@@ -156,18 +156,18 @@ export default function SobreNosotros() {
                 </h2>
                 <div className="space-y-4 text-gray-400">
                   <p>
-                    JuSeb SOFTWARE nació en 2016 con una visión clara: democratizar el acceso a 
-                    tecnología de calidad empresarial para negocios de todos los tamaños.
+                    JuSeb SOFTWARE nació en 2019 con una visión clara: democratizar el acceso a 
+                    tecnología de calidad para negocios de todos los tamaños.
                   </p>
                   <p>
-                    Comenzamos como un pequeño equipo de desarrolladores apasionados trabajando 
-                    desde un garaje en Pereira, Colombia. Hoy, somos una empresa reconocida que 
-                    ha transformado más de 100 negocios a través de soluciones tecnológicas innovadoras.
+                    Desde nuestros inicios como un pequeño equipo de desarrolladores jóvenes en Pereira, Colombia, 
+                    hemos crecido con esfuerzo, constancia y pasión por la innovación. Lo que comenzó como proyectos 
+                    freelance en un cuarto convertido en oficina, se transformó en una agencia formal que ha acompañado 
+                    a más de 100 clientes en sus procesos de transformación digital.
                   </p>
                   <p>
-                    Nuestro enfoque siempre ha sido el mismo: entender profundamente las necesidades 
-                    de nuestros clientes y crear soluciones que no solo resuelvan problemas, sino 
-                    que impulsen el crecimiento y la eficiencia.
+                    A lo largo del camino, hemos mantenido un enfoque claro: entender profundamente a cada cliente, 
+                    construir soluciones a la medida y aportar valor real a través de tecnología eficiente y escalable.
                   </p>
                 </div>
               </div>
@@ -175,18 +175,19 @@ export default function SobreNosotros() {
                 <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 rounded-2xl p-8 border border-blue-500/30">
                   <h3 className="text-xl font-bold text-white mb-4">🎯 Nuestra Misión</h3>
                   <p className="text-gray-300 mb-6">
-                    Empoderar a las empresas con tecnología que transforma procesos, 
-                    mejora la eficiencia y genera crecimiento sostenible.
+                    Empoderar a empresas y emprendedores con soluciones tecnológicas que optimicen procesos, 
+                    generen crecimiento y mejoren la competitividad.
                   </p>
                   <h3 className="text-xl font-bold text-white mb-4">🔮 Nuestra Visión</h3>
                   <p className="text-gray-300">
-                    Ser la empresa líder en transformación digital en Colombia, 
-                    reconocida por la excelencia técnica y el impacto positivo en nuestros clientes.
+                    Convertirnos en la empresa referente en transformación digital en Colombia y Latinoamérica, 
+                    destacándonos por nuestra calidad técnica, cercanía con los clientes y resultados tangibles.
                   </p>
                 </div>
               </div>
             </div>
           </motion.div>
+
 
           {/* Valores */}
           <motion.div
@@ -351,13 +352,16 @@ export default function SobreNosotros() {
               >
                 🚀 Empezar Proyecto
               </motion.button>
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                href="https://wa.me/573107736703"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-green-500 text-green-400 rounded-xl font-medium text-lg hover:bg-green-500 hover:text-white transition-colors"
               >
-                📞 Llamar: +57 321 123 4567
-              </motion.button>
+                💬 Hablar por WhatsApp
+              </motion.a>
             </div>
             <p className="text-sm text-gray-500 mt-6">
               ⚡ Respuesta en 2 horas • 💰 Consulta gratuita • 🎯 Sin compromiso
