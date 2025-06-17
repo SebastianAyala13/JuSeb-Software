@@ -8,7 +8,7 @@ const equipo = [
   {
     nombre: "Juan Sebastián",
     cargo: "CEO & Full Stack Developer",
-    experiencia: "Más de 5 años",
+    experiencia: "Más de 6 años",
     especialidades: ["React", "Node.js", "AWS", "Arquitectura de Software", "Python", "Java", "HTML", "PHP", "SQL", "CSS", "JavaScript", "Tailwind", "Next.js"],
     descripcion: "Apasionado por crear soluciones tecnológicas que transforman negocios. Especialista en desarrollo full-stack y arquitectura de sistemas escalables.",
     logros: [
@@ -74,8 +74,8 @@ const certificaciones = [
 ];
 
 const estadisticas = [
-  { numero: "50+", label: "Proyectos Completados", icono: "🏆" },
-  { numero: "30+", label: "Clientes Satisfechos", icono: "😊" },
+  { numero: "150+", label: "Proyectos Completados", icono: "🏆" },
+  { numero: "120+", label: "Clientes Satisfechos", icono: "😊" },
   { numero: "6+", label: "Años Programando", icono: "📅" },
   { numero: "99.9%", label: "Uptime Garantizado", icono: "⚡" },
   { numero: "24/7", label: "Soporte Técnico", icono: "🛠️" },
@@ -87,7 +87,7 @@ export default function SobreNosotros() {
     <>
       <SeoHead
         title="Sobre Nosotros - Equipo Experto en Desarrollo Web | JuSeb SOFTWARE"
-        description="Conoce al equipo de JuSeb SOFTWARE. 8+ años de experiencia, 100+ proyectos exitosos. Especialistas en desarrollo web, apps móviles y consultoría IT."
+        description="Conoce al equipo de JuSeb SOFTWARE. 6+ años de experiencia, 150+ proyectos exitosos. Especialistas en desarrollo web, apps móviles y consultoría IT."
         canonical="https://juseb-software.com/sobre-nosotros"
       />
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-32">
