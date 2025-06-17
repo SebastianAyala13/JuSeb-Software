@@ -33,12 +33,26 @@ const servicios = [
     precio: "Desde $800",
     tiempoEntrega: "1-3 semanas"
   },
+  {
+    titulo: "Automatización de Procesos",
+    descripcion: "Conectamos y automatizamos tus apps favoritas (CRM, email, WhatsApp, formularios, bases de datos, etc.) para ahorrar tiempo y evitar errores manuales.",
+    tecnologias: ["n8n", "Zapier", "Make", "Airtable", "Google Sheets", "APIs", "Webhooks"],
+    beneficios: [
+      "Ahorro de +10h semanales",
+      "Tareas repetitivas 100% automáticas",
+      "Integración multiplataforma",
+      "Disminución de errores humanos"
+    ],
+    icono: "⚙️",
+    precio: "Desde $400",
+    tiempoEntrega: "1-2 semanas"
+  }  
 ];
 
 const schemaOrgServicios = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Desarrollo Web, Aplicaciones Móviles, Consultoría IT',
+  serviceType: 'Desarrollo Web, Aplicaciones Móviles, Consultoría IT, Automatización de Procesos',
   provider: {
     '@type': 'Organization',
     name: 'JuSeb SOFTWARE',
@@ -58,8 +72,9 @@ const schemaOrgServicios = {
     }]
   },
   areaServed: 'Colombia',
-  description: 'Servicios de desarrollo web, apps móviles y consultoría IT en Pereira y Colombia.'
+  description: 'Servicios de desarrollo web, apps móviles, consultoría IT y automatización con herramientas como n8n, Zapier y más, en Pereira y Colombia.'
 };
+
 
 export default function Servicios() {
   const [selectedService, setSelectedService] = useState(null);
