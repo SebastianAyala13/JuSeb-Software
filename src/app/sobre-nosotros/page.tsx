@@ -355,7 +355,7 @@ export default function SobreNosotros() {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://wa.me/573107736703"
+                 href="https://wa.me/573107736703?text=Hola%2C%20estoy%20interesado%20en%20un%20proyecto%20web"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-4 border-2 border-green-500 text-green-400 rounded-xl font-medium text-lg hover:bg-green-500 hover:text-white transition-colors"
