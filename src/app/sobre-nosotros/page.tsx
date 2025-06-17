@@ -9,7 +9,7 @@ const equipo = [
     nombre: "Juan Sebastián",
     cargo: "CEO & Full Stack Developer",
     experiencia: "Más de 5 años",
-    especialidades: ["React", "Node.js", "AWS", "Arquitectura de Software"],
+    especialidades: ["React", "Node.js", "AWS", "Arquitectura de Software", "Python", "Java", "HTML", "PHP", "SQL", "CSS", "JavaScript", "Tailwind", "Next.js"],
     descripcion: "Apasionado por crear soluciones tecnológicas que transforman negocios. Especialista en desarrollo full-stack y arquitectura de sistemas escalables.",
     logros: [
       "100+ proyectos exitosos",
@@ -25,7 +25,7 @@ const equipo = [
     nombre: "Juan José Cardona",
     cargo: "Full Stack Developer",
     experiencia: "Más de 5 años",
-    especialidades: ["Next.js", "Firebase", "Tailwind", "API REST"],
+    especialidades: ["Next.js","Firebase","Python","SQL","HTML","CSS","JavaScript"],
     descripcion: "Desarrollador full-stack con pasión por construir plataformas modernas y escalables. Siempre enfocado en la mejora continua y las buenas prácticas de código.",
     logros: [
       "Desarrollo de múltiples plataformas SaaS",
@@ -76,13 +76,14 @@ const certificaciones = [
 ];
 
 const estadisticas = [
-  { numero: "100+", label: "Proyectos Completados", icono: "🏆" },
-  { numero: "50+", label: "Clientes Satisfechos", icono: "😊" },
-  { numero: "8+", label: "Años de Experiencia", icono: "📅" },
+  { numero: "50+", label: "Proyectos Completados", icono: "🏆" },
+  { numero: "30+", label: "Clientes Satisfechos", icono: "😊" },
+  { numero: "6+", label: "Años Programando", icono: "📅" },
   { numero: "99.9%", label: "Uptime Garantizado", icono: "⚡" },
   { numero: "24/7", label: "Soporte Técnico", icono: "🛠️" },
-  { numero: "285%", label: "ROI Promedio", icono: "📈" }
+  { numero: "200%", label: "ROI Promedio", icono: "📈" }
 ];
+
 
 export default function SobreNosotros() {
   return (
@@ -94,6 +95,7 @@ export default function SobreNosotros() {
       />
       <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
           {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -102,29 +104,44 @@ export default function SobreNosotros() {
             className="text-center mb-20"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
-              Sobre JuSeb SOFTWARE
+              JuSeb SOFTWARE – Desarrollo Web & Apps desde Pereira
             </h1>
             <p className="text-xl text-gray-400 max-w-4xl mx-auto mb-8">
-              Somos un equipo apasionado de desarrolladores, diseñadores y consultores tecnológicos 
-              comprometidos con transformar ideas en soluciones digitales exitosas.
+              Desarrollamos soluciones web y móviles con +6 años de experiencia, empezando a los 17. Tecnología moderna, impacto real y atención personalizada.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                href="https://wa.me/573107736703?text=Hola%2C%20quiero%20trabajar%20con%20JuSeb%20SOFTWARE"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-medium text-lg hover:from-blue-700 hover:to-purple-700 transition-colors"
               >
                 🤝 Trabajar con Nosotros
-              </motion.button>
-              <motion.button
+              </motion.a>
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                href="/contacto"
                 className="px-8 py-4 border-2 border-blue-500 text-blue-400 rounded-xl font-medium text-lg hover:bg-blue-500 hover:text-white transition-colors"
               >
-                📞 Agendar Reunión
-              </motion.button>
+                📅 Agenda tu Reunión
+              </motion.a>
             </div>
           </motion.div>
+
+              {/* Contacto */}
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                href="/contacto"
+                className="px-8 py-4 border-2 border-blue-500 text-blue-400 rounded-xl font-medium text-lg hover:bg-blue-500 hover:text-white transition-colors"
+              >
+                📅 Agenda tu Reunión
+              </motion.a>
+            </div>
+
 
           {/* Estadísticas */}
           <motion.div
@@ -368,7 +385,7 @@ export default function SobreNosotros() {
             </p>  
           </motion.div>
         </div>
-      </div>
+  
     </>
   );
 } 
